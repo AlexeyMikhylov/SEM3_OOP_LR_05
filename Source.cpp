@@ -75,12 +75,6 @@ class DynamicStack
             throw out_of_range("stack is empty"); // Исключение при пустом стеке
         }
 
-        // Метод для проверки пустоты стека
-        bool isEmpty()
-        {
-            return top == 0;
-        }
-
         void printStackRow()
         {
             cout << "\n[ ";
@@ -154,7 +148,7 @@ int main() {
 
     DynamicStack<string> strStack;
 
-    int i = 20;
+    int i = 19;
     while (i > 0)
     {
         strStack.push("Hello");
