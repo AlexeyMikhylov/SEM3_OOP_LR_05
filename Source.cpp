@@ -12,21 +12,20 @@ class DynamicStack
 
     private:
 
-        T* stackArray;       // Указатель на массив для хранения элементов стека
-        int top;             // Индекс вершины стека
-        int capacity;        // Вместимость стека
+        T* stackArray;       
+        int top;             
+        int capacity;        
 
-        // Метод для увеличения размера массива, если это необходимо
         void resize()
         {
-            capacity += 1;                      // Увеличиваем в два раза
-            T* newStackArray = new T[capacity]; // Создаем новый массив
+            capacity += 1;   
+            T* newStackArray = new T[capacity];
             for (int i = 0; i < top; i++)
             {
-                newStackArray[i] = stackArray[i]; // Копируем старые элементы
+                newStackArray[i] = stackArray[i]; 
             }
-            delete[] stackArray;                // Удаляем старый массив
-            stackArray = newStackArray;        // Указывает на новый массив
+            delete[] stackArray;
+            stackArray = newStackArray;
         }
 
     public:
@@ -34,13 +33,13 @@ class DynamicStack
         // Конструктор по умолчанию
         DynamicStack() : top(0), capacity(2)
         {
-            stackArray = new T[capacity]; // Инициализируем массив
+            stackArray = new T[capacity];
         }
 
         // Деструктор
         ~DynamicStack()
         {
-            delete[] stackArray; // Освобождаем память
+            delete[] stackArray;
         }
 
         // Метод для добавления элемента в стек
@@ -48,16 +47,16 @@ class DynamicStack
         {
             if (top == capacity)
             {
-                resize(); // Увеличиваем размер, если стек полон
+                resize();
             }
-            stackArray[top++] = value; // Добавляем элемент
+            stackArray[top++] = value;
         }
 
         // Метод для удаления элемента из стека
         void pop() {
             if (top > 0)
             {
-                --top; // Уменьшаем индекс вершины стека
+                --top; 
             }
             else
             {
@@ -70,9 +69,9 @@ class DynamicStack
         {
             if (top > 0)
             {
-                return stackArray[top - 1]; // Возвращаем элемент
+                return stackArray[top - 1];
             }
-            throw out_of_range("stack is empty"); // Исключение при пустом стеке
+            throw out_of_range("stack is empty");
         }
 
         void printStackRow()
@@ -96,7 +95,6 @@ class DynamicStack
         }
 };
 
-// Пример использования
 int main() {
     DynamicStack<int> intStack;
 
