@@ -95,7 +95,8 @@ class DynamicStack
         }
 };
 
-int main() {
+int main()
+{
     DynamicStack<int> intStack;
 
     //
